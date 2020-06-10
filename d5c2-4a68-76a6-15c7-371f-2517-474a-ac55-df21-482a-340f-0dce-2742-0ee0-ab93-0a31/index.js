@@ -1,4 +1,4 @@
-.hi
+function intialize()
 {
     
 }
