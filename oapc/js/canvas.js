@@ -14,8 +14,7 @@ function startCanvas()
 
     waveHeight = 0.045 * cvs.height;
     waveDisplacement = 0.2 * cvs.height;
-    waveSpacing = 0.035 * cvs.height;
-    //waveSpacing = 0.01 * cvs.height;
+    waveSpacing = 0.03 * cvs.height;
 
     colorScheme = [
         'rgba(73, 254, 236, 0.7)',
@@ -34,7 +33,6 @@ function startCanvas()
 function newWaveFrame()
 {
     ctx.clearRect(0, 0, cvs.width, cvs.height);
-    //ctx.fillStyle = `rgba(73, 254, 236, ${lol})`;
     ctx.fillStyle = `rgba(73, 254, 236, 0.4)`;
     ctx.fillRect(0, 0, cvs.width, cvs.height);
     for (var i=0; i<waves.length; i++)
@@ -89,7 +87,7 @@ class Wave
     {
         for (var j=0; j<this.nodes.length; j++)
         {
-            this.nodes[j][1] = (waveHeight * Math.sin(this.nodes[j][2]/20)) + this.yCoord;
+            this.nodes[j][1] = ((waveHeight/2) * Math.sin(this.nodes[j][2]/20)) + this.yCoord;
             this.nodes[j][2]+= this.nodes[j][3];
         }
     }
