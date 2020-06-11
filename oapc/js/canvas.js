@@ -1,9 +1,23 @@
-const NODECOUNT = 15,
+const NODE_DISPLACEMENT = 96,
     WAVECOUNT = 4,
     DEBUG = true,
     SPEED = 1;
-
 lol = 0;
+window.addEventListener('resize', function (e)
+{
+    startCanvas();
+    console.log('new canvas');
+});
+
+window.addEventListener('mousemove', function (e)
+{
+    
+});
+
+window.addEventListener('click', function (e)
+{
+    
+});
 
 function startCanvas()
 {
@@ -13,8 +27,8 @@ function startCanvas()
     cvs.height = cvs.getBoundingClientRect().height;
 
     waveHeight = 0.045 * cvs.height;
-    waveDisplacement = 0.2 * cvs.height;
-    waveSpacing = 0.03 * cvs.height;
+    waveYCoord = 0.2 * cvs.height;
+    waveSpacing = 0.018 * cvs.height;
 
     colorScheme = [
         'rgba(73, 254, 236, 0.7)',
@@ -23,48 +37,32 @@ function startCanvas()
         'rgba(3, 7, 108, 0.1)'
     ];
 
-    waves = [];
-    for (var i=0; i<WAVECOUNT; i++)
-        waves.push(new Wave(NODECOUNT, waveDisplacement + (i * waveSpacing), colorScheme[i]));
-
-    newWaveFrame();
-}
-
-function newWaveFrame()
-{
-    ctx.clearRect(0, 0, cvs.width, cvs.height);
-    ctx.fillStyle = `rgba(73, 254, 236, 0.4)`;
-    ctx.fillRect(0, 0, cvs.width, cvs.height);
-    for (var i=0; i<waves.length; i++)
-    {
-        waves[i].updateNodes();
-        waves[i].drawWave();
-    }
-    requestAnimationFrame(newWaveFrame);
+    ocean = new Ocean(NODE_DISPLACEMENT, waveYCoord, waveSpacing, colorScheme, WAVECOUNT);
+    ocean.newWaveFrame();
 }
 
 class Wave
 {
-    constructor(nodeCount, displacement, color)
+    constructor(nodeDisplacement, displacement, color)
     {
         this.color = color;
         this.yCoord = displacement;
-        this.nodes = this.createNodes(nodeCount);
+        this.nodes = this.createNodes(nodeDisplacement);
     }
 
-    createNodes(nodeCount)
+    createNodes(nodeDisplacement)
     {
         var s = function(lowerBound, increase)
         {
             var o = Math.random();
-            if (o < 0.4)
-                o+= 0.4;
+            if (o < lowerBound)
+                o+= increase;
             return o;
         }
 
-        for (var i=0, n=[]; i<=nodeCount+1; i++)
+        for (var i=0, n=[]; i<=(cvs.width/nodeDisplacement)+1; i++)
             n.push([
-                (cvs.width * i) / (nodeCount + 1),
+                nodeDisplacement * i,
                 this.yCoord + randNum(-1 * waveHeight, waveHeight, 1),
                 Math.random() * (s(0.4, 0.4) * SPEED * 2000),
                 s(0.4, 0.4) * SPEED 
@@ -116,5 +114,29 @@ class Wave
         ctx.lineTo(0, cvs.height);
         ctx.closePath();
         ctx.fill();
+    }
+}
+
+class Ocean
+{
+    constructor(nodeDisplacement, startingYCoord, waveSpacing, colorScheme, waveCount)
+    {
+        this.waves = [];
+        for (var i=0; i<waveCount; i++)
+            this.waves.push(new Wave(nodeDisplacement, startingYCoord + (i * waveSpacing), colorScheme[i]));
+    }
+
+    newWaveFrame()
+    {
+        ctx.clearRect(0, 0, cvs.width, cvs.height);
+        ctx.fillStyle = `rgba(73, 254, 236, 0.4)`;
+        ctx.fillRect(0, 0, cvs.width, cvs.height);
+        for (var i=0; i<this.waves.length; i++)
+        {
+            this.waves[i].updateNodes();
+            this.waves[i].drawWave();
+        }
+
+        requestAnimationFrame(this.newWaveFrame.bind(this));
     }
 }
