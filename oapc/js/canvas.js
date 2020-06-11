@@ -193,6 +193,12 @@ class Rain
         for (var i=0, r=[]; i<this.drops.length; i++)
         {
             this.drops[i].updateDrop();
+            if (this.drops[i].pointA[1] < this.drops[i].yGoal && this.drops[i].pointB[1] > this.drops[i].yGoal)
+            {
+                this.drops[i].color = "white";
+                this.drops[i].pointA = [medianOf(this.drops[i].pointA[0], this.drops[i].pointB[0]), this.drops[i].yGoal];
+                //this.drops[i].pointB = [...this.drops[i].pointA]
+            }
             if (this.drops[i].finishedRoute)
                 r.push(i);
         }
