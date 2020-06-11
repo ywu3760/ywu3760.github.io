@@ -2,6 +2,9 @@
 <html style="scroll-behavior: smooth;">
     <head>
         <title>OAPC | Saving Our Oceans from Acidification</title>
+        <script src="js/index.js"></script>
+        <script src="js/canvas.js"></script>
+        <script src="js/utilities.js"></script>
         <link rel="stylesheet" href="css/body.css">
         <link rel="stylesheet" href="css/header.css">
         <link rel="stylesheet" href="css/info.css">
@@ -11,17 +14,14 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo">
     </head>
     <body onload="init();">
-        <section id="header">
-            <div class="header-banner">
-                <img src="images/logo.png" alt="campaign logo">
-                <div>Ocean Acidification Prevention Campaign</div>
+        <div id="header" onresize="startCanvas();">
+            <canvas id="header-canvas" onmouseover="lol = event.clientX/cvs.width;" onclick="console.log(`${lol}`);"></canvas>
+            <img src="images/logo.png" alt="OAPC Logo">
+            <div class="header-statement-container">
+                <div class="header-motto">SAVE OUR OCEANS.</div>
+                <div class="header-name">AN OCEAN ACIDIFICATION PREVENTION CAMPAIGN</div>
             </div>
-            <div class="header-navigation">
-                <a href="#info">WHAT IS THIS</a>
-                <a href="#education">KNOW THE ISSUE</a>
-                <a href="#action">TAKE ACTION</a>
-            </div>
-        </section>
+        </div>
         <section id="info">
             INFO
         </section>
@@ -34,6 +34,5 @@
         <section id="footer">
             FOOTER
         </section>
-        <script src="canvas.js"></script>
     </body>
 </html>

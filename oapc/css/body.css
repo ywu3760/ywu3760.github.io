@@ -8,7 +8,8 @@ html, body
 body
 {
     margin: 0;
-    background-image: url("https://cdn.pixabay.com/photo/2016/09/13/03/11/sea-water-1666313_1280.jpg");
-    background-size: cover;
+    /*background-image: url("https://cdn.pixabay.com/photo/2016/09/13/03/11/sea-water-1666313_1280.jpg");*/
     background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
