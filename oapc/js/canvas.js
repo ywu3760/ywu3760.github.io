@@ -1,22 +1,13 @@
 const NODE_DISPLACEMENT = 96,
     WAVECOUNT = 4,
-    DEBUG = true,
+    DROPCOUNT = 100,
+    DEBUG = false,
     SPEED = 1;
-lol = 0;
+
 window.addEventListener('resize', function (e)
 {
     startCanvas();
     console.log('new canvas');
-});
-
-window.addEventListener('mousemove', function (e)
-{
-    
-});
-
-window.addEventListener('click', function (e)
-{
-    
 });
 
 function startCanvas()
@@ -31,23 +22,80 @@ function startCanvas()
     waveSpacing = 0.018 * cvs.height;
 
     colorScheme = [
-        'rgba(73, 254, 236, 0.7)',
-        'rgba(84, 195, 215, 0.6)',
-        'rgba(0, 153, 255, 0.4)',
-        'rgba(3, 7, 108, 0.1)'
+        gradientColor('rgba(20, 87, 108, 0.8)', 1),
+        gradientColor('rgba(23, 100, 125, 0.8)', 1, 'rgba(17, 74, 91, 1)', 2),
+        gradientColor('rgba(26, 114, 141, 0.7)', 1, 'rgba(17, 74, 91, 1)', 2),
+        gradientColor('rgba(32, 140, 174, 0.3)', 1, 'rgba(17, 74, 91, 1)', 2)
     ];
-
-    ocean = new Ocean(NODE_DISPLACEMENT, waveYCoord, waveSpacing, colorScheme, WAVECOUNT);
+    
+    ocean = new Ocean(NODE_DISPLACEMENT, waveYCoord, waveSpacing, colorScheme, WAVECOUNT, DROPCOUNT, 20, 1.1 * Math.PI, 0.5);
     ocean.newWaveFrame();
+}
+
+function createGradient(...colors)
+{
+    var grd = ctx.createLinearGradient(0, 0, 0, cvs.height);
+    grd.addColorStop(0, colors[0]);
+    for (var i=1; i<colors.length; i++)
+        grd.addColorStop(i / (colors.length - 1), colors[i]);
+
+    return grd;
+}
+
+function gradientColor(...colorParams) // [color, %, color, %]
+{
+    if (colorParams.length % 2 == 1)
+        return "#000000";
+
+    for (var i=0, p=[]; i<colorParams.length/2; i++)
+        for (var j=0; j<colorParams[(2*i) + 1]; j++)
+            p.push(colorParams[(2*i)]);
+
+    return createGradient.apply(null, p);
+}
+
+class Ocean
+{
+    constructor(nodeDisplacement, startingYCoord, waveSpacing, colorScheme, waveCount, dropCount, dropLength, dropDirection, dropIntensity)
+    {
+        this.waves = [];
+        for (var i=0; i<waveCount; i++)
+            this.waves.push(new Wave(
+                nodeDisplacement,
+                startingYCoord + (i * waveSpacing),
+                colorScheme[i],
+                dropCount,
+                dropLength,
+                dropDirection,
+                dropIntensity
+            ));
+    }
+
+    newWaveFrame()
+    {
+        ctx.clearRect(0, 0, cvs.width, cvs.height);
+        ctx.fillStyle = `rgb(118, 157, 167)`;
+        ctx.fillRect(0, 0, cvs.width, cvs.height);
+        for (var i=0; i<this.waves.length; i++)
+        {
+            this.waves[i].updateNodes();
+            this.waves[i].rain.updateRain();
+            this.waves[i].drawWave();
+            this.waves[i].rain.drawRain();
+        }
+
+        requestAnimationFrame(this.newWaveFrame.bind(this));
+    }
 }
 
 class Wave
 {
-    constructor(nodeDisplacement, displacement, color)
+    constructor(nodeDisplacement, displacement, color, dropCount, dropLength, dropDirection, dropIntensity)
     {
         this.color = color;
         this.yCoord = displacement;
         this.nodes = this.createNodes(nodeDisplacement);
+        this.rain = new Rain(dropCount, this.yCoord + waveHeight, dropLength, dropDirection, this.color, dropIntensity);
     }
 
     createNodes(nodeDisplacement)
@@ -73,6 +121,7 @@ class Wave
 
     drawNodes()
     {
+        ctx.strokeStyle = "black";
         for (var i=0; i<this.nodes.length; i++)
         {
             ctx.beginPath();
@@ -117,26 +166,96 @@ class Wave
     }
 }
 
-class Ocean
+class Rain
 {
-    constructor(nodeDisplacement, startingYCoord, waveSpacing, colorScheme, waveCount)
+    constructor(dropCount, yCoord, dropLength, dropDirection, dropColor, dropIntensity)
     {
-        this.waves = [];
-        for (var i=0; i<waveCount; i++)
-            this.waves.push(new Wave(nodeDisplacement, startingYCoord + (i * waveSpacing), colorScheme[i]));
+        this.dropsNeeded = dropCount;
+        this.yBound = yCoord;
+        this.dropLength = dropLength;
+        this.dropDirection = dropDirection;
+        this.dropColor = dropColor;
+        this.dropIntensity = dropIntensity;
+        this.drops = [];
+
+        for (var i=0; i<this.dropsNeeded; i++)
+            this.drops.push(new Raindrop(
+                this.yBound - (Math.random() * waveHeight),
+                this.dropLength,
+                this.dropDirection,
+                this.dropColor,
+                this.dropIntensity
+            ));
     }
 
-    newWaveFrame()
+    updateRain()
     {
-        ctx.clearRect(0, 0, cvs.width, cvs.height);
-        ctx.fillStyle = `rgba(73, 254, 236, 0.4)`;
-        ctx.fillRect(0, 0, cvs.width, cvs.height);
-        for (var i=0; i<this.waves.length; i++)
+        for (var i=0, r=[]; i<this.drops.length; i++)
         {
-            this.waves[i].updateNodes();
-            this.waves[i].drawWave();
+            this.drops[i].updateDrop();
+            if (this.drops[i].finishedRoute)
+                r.push(i);
         }
+        
+        if (r.length >= 1)
+            console.log(`r = ${r}`);
+        for (var i=r.length-1; i>-1; i--)
+            this.drops.splice(r[i], 1);
 
-        requestAnimationFrame(this.newWaveFrame.bind(this));
+        for (var i=0; i<r.length; i++)
+            this.drops.push(new Raindrop(
+                this.yBound - (Math.random() * waveHeight),
+                this.dropLength,
+                this.dropDirection,
+                this.dropColor,
+                this.dropIntensity
+            ));
+    }
+
+    drawRain()
+    {
+        for (var i=0; i<this.drops.length; i++)
+            this.drops[i].drawDrop();
+    }
+}
+
+class Raindrop
+{
+    constructor(yBound, length, radian, color, fallingSpeed)
+    {
+        this.xChange = length * Math.sin(radian);
+        this.yChange = -1 * length * Math.cos(radian);
+        this.yGoal = yBound;
+        this.color = color;
+        this.fallingSpeed = fallingSpeed;
+
+        this.pointB = [randNum(0, 1.5 * cvs.width, 1), randNum(-0.2 * cvs.height, this.yGoal, 0)];
+        this.pointA = [this.pointB[0] - this.xChange, this.pointB[1] - this.yChange];
+    }
+
+    drawDrop()
+    {
+        ctx.beginPath();
+        ctx.strokeStyle = this.color;
+        ctx.lineWidth = 2;
+        ctx.moveTo(this.pointA[0], this.pointA[1]);
+        ctx.lineTo(this.pointB[0], this.pointB[1]);
+        ctx.stroke();
+    }
+
+    updateDrop()
+    {
+        var xChange = this.fallingSpeed * this.xChange,
+            yChange = this.fallingSpeed * this.yChange;
+        this.pointA = [this.pointA[0] + xChange, this.pointA[1] + yChange];
+        this.pointB = [this.pointB[0] + xChange, this.pointB[1] + yChange];
+    }
+
+    get finishedRoute()
+    {
+        if (this.pointA[1] > this.yGoal)
+            return true;
+        
+        return false;
     }
 }
