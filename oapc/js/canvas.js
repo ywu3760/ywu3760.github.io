@@ -1,13 +1,12 @@
 const NODE_DISPLACEMENT = 96,
     WAVECOUNT = 4,
     DROPCOUNT = 100,
-    DEBUG = false,
+    CANVAS_DEBUG = false,
     SPEED = 1;
 
 window.addEventListener('resize', function (e)
 {
     startCanvas();
-    console.log('new canvas');
 });
 
 function startCanvas()
@@ -141,7 +140,7 @@ class Wave
 
     drawWave()
     {
-        if (DEBUG)
+        if (CANVAS_DEBUG)
             this.drawNodes();
         ctx.fillStyle = this.color;
         ctx.beginPath();
@@ -193,18 +192,15 @@ class Rain
         for (var i=0, r=[]; i<this.drops.length; i++)
         {
             this.drops[i].updateDrop();
-            if (this.drops[i].pointA[1] < this.drops[i].yGoal && this.drops[i].pointB[1] > this.drops[i].yGoal)
+            if (this.drops[i].pointA[1] <= this.drops[i].yGoal && this.drops[i].pointB[1] >= this.drops[i].yGoal)
             {
                 this.drops[i].color = "white";
                 this.drops[i].pointA = [medianOf(this.drops[i].pointA[0], this.drops[i].pointB[0]), this.drops[i].yGoal];
-                //this.drops[i].pointB = [...this.drops[i].pointA]
             }
             if (this.drops[i].finishedRoute)
                 r.push(i);
         }
         
-        if (r.length >= 1)
-            console.log(`r = ${r}`);
         for (var i=r.length-1; i>-1; i--)
             this.drops.splice(r[i], 1);
 

@@ -1,5 +1,54 @@
 #footer
 {
     width: 100%;
-    height: 50%;
+    height: 175%;
+    background-color: #000000;
+}
+
+.footer-image-container
+{
+    position: relative;
+    width: 100%;
+}
+
+.footer-image-container img
+{
+    width: 100%;
+    height: auto;
+    background-color: #114A5B;
+}
+
+.footer-image-message-box
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footer-image-message-box div
+{
+    text-align: center;
+    font-family: Exo;
+    font-weight: bold;
+    color: white;
+    padding: 0 0;
+    font-size: 200%;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.footer-image-message-box div span
+{
+    color: red;
+}
+
+.footer-image-message-box div:nth-child(2)
+{
+    width: 100%;
 }
