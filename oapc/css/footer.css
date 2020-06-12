@@ -1,8 +1,7 @@
 #footer
 {
     width: 100%;
-    height: 175%;
-    background-color: #000000;
+    background-color: #114A5B;
     padding: 0 0;
     margin: 0 0;
 }
@@ -12,7 +11,8 @@
     position: relative;
     width: 100%;
     border-width: 0px;
-    background-color: black;
+    background-image: url("../images/background-footer.png");
+    background-size: cover;
     padding: 0 0;
     margin: 0 0;
 }
@@ -58,4 +58,53 @@
 .footer-image-message-box div:nth-child(2)
 {
     width: 100%;
+}
+
+.footer-info-container
+{
+    margin: 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+    width: 100%;
+    background-color: #000000;;
+}
+
+.footer-info-container img
+{
+    height: auto;
+    width: 15%;
+}
+
+.footer-info-text
+{
+    padding: 2% 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: stretch;
+}
+
+.footer-info-text div
+{
+    font-family: Exo;
+    color: white;
+    padding: 0 0;
+    font-size: 100%;
+    width: 70%;
+}
+
+.footer-info-text div:nth-child(1)
+{
+    font-size: 250%;
+    width: 100%;
+    text-align: center;
+}
+
+.footer-info-text div:nth-child(2)
+{
+    margin-top: 2%;
+    width: 100%;
+    text-align: justify;
 }
