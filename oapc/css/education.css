@@ -41,7 +41,7 @@
     width: 40%;
 }
 
-.education-info span, .education-info-1 span
+.education-info span, .education-info-1 span, .education-info-2 span
 {
     color: red;
 }
@@ -53,6 +53,15 @@
     color: white;
     font-size: 150%;
     padding: 0 15%;
+}
+
+.education-info-2
+{
+    padding: 2.5% 15%;
+    font-family: Exo;
+    font-weight: normal;
+    color: white;
+    font-size: 150%;
 }
 
 .human-activities-box

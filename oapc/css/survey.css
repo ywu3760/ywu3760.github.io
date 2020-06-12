@@ -1,0 +1,18 @@
+#survey
+{
+    width: 100%;
+    background-color: #114A5B;
+    /*background: linear-gradient(#114A5B, black, #114A5B);*/
+}
+
+.survey-title
+{
+    text-align: center;
+    font-family: Exo;
+    font-weight: bold;
+    color: white;
+    font-size: 200%;
+    width: 100%;
+    height: 10%;
+    padding-top: 2%;
+}
