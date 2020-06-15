@@ -76,13 +76,16 @@
     font-size: 4.2rem;
     text-align: center;
     width: 100%;
+    font-weight: bold;
 }
 
 .footer-info-text div:nth-child(2)
 {
     font-size: 2.5rem;
-    padding: 0 40px;
+    padding: 0 50px;
     margin-top: 3rem;
+    line-height: 4rem;
+    text-align: left;
 }
 
 .footer-info-text div:nth-child(3)
@@ -92,4 +95,13 @@
     margin: 3rem 0;
     font-style: italic;
     text-align: center;
+}
+
+#footer:last-child
+{
+    font-size: 1rem;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding-bottom: 1.5rem;
 }
