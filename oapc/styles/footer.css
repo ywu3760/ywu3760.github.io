@@ -10,11 +10,8 @@
 {
     position: relative;
     width: 100%;
-    border-width: 0px;
     background-image: url("../images/background-footer.png");
     background-size: cover;
-    padding: 0 0;
-    margin: 0 0;
 }
 
 .footer-image-container img
@@ -33,78 +30,66 @@
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 90%;
     align-items: center;
-    justify-content: space-evenly;
-}
-
-.footer-image-message-box div
-{
-    text-align: center;
-    font-family: Exo;
+    font-size: 4.2rem;
     font-weight: bold;
+    text-align: center;
     color: white;
-    padding: 0 0;
-    /*font-size: 200%;*/
-    background-color: rgba(0, 0, 0, 0);
-}
-
-.footer-image-message-box div span
-{
-    color: red;
+    width: 100%;
 }
 
 .footer-image-message-box div:nth-child(2)
 {
-    width: 100%;
+    padding-top: 15rem;
+}
+
+.footer-image-message-box span
+{
+    color: red;
 }
 
 .footer-info-container
 {
-    margin: 0 0;
+    background-color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: left;
-    width: 100%;
-    background-color: #000000;;
 }
 
 .footer-info-container img
 {
+    width: 20%;
     height: auto;
-    width: 15%;
+    margin-bottom: 6rem;
 }
 
 .footer-info-text
 {
-    padding: 2% 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: stretch;
-}
-
-.footer-info-text div
-{
-    font-family: Exo;
     color: white;
-    padding: 0 0;
-    font-size: 100%;
-    width: 70%;
 }
 
 .footer-info-text div:nth-child(1)
 {
-    font-size: 250%;
-    width: 100%;
+    font-size: 4.2rem;
     text-align: center;
+    width: 100%;
 }
 
 .footer-info-text div:nth-child(2)
 {
-    margin-top: 2%;
-    width: 100%;
-    text-align: justify;
+    font-size: 2.5rem;
+    padding: 0 40px;
+    margin-top: 3rem;
+}
+
+.footer-info-text div:nth-child(3)
+{
+    font-size: 2rem;
+    padding: 0 40px;
+    margin: 3rem 0;
+    font-style: italic;
+    text-align: center;
 }

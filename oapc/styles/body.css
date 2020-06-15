@@ -1,3 +1,9 @@
+html
+{
+    font-size: 62.5%;
+    font-family: Exo;
+}
+
 html, body
 {
     width: 100%;
@@ -9,9 +15,6 @@ body
 {
     margin: 0;
     background-color: #114A5B;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
     scroll-behavior: smooth;
 }
 
