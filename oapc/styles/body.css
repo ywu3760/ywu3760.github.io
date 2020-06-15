@@ -14,3 +14,9 @@ body
     background-size: cover;
     scroll-behavior: smooth;
 }
+
+#loadingBox img
+{
+    width: 100%;
+    height: auto;   
+}
