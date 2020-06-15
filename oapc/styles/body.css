@@ -44,3 +44,9 @@ body
     text-align: center;
     width: 100%;
 }
+
+hr
+{
+    margin: 30px auto;
+    width: calc(100% - 300px);
+}

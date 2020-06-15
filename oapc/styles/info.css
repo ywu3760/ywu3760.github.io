@@ -1,0 +1,56 @@
+#info
+{
+    width: 100%;
+    background-color: #114A5B;
+    padding: 0 0;
+    margin: 0 0;
+}
+
+.info-title
+{
+    font-family: Exo;
+    text-align: left;
+    font-size: 5rem;
+    padding-top: 30px;
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.info-text
+{
+    font-family: Exo;
+    text-align: left;
+    font-size: 4rem;
+    padding: 30px 100px;
+    width: calc(100% - 200px);
+    color: white;
+    text-align: justify;
+    text-justify: auto;
+}
+
+.info-text span
+{
+    color: red;
+}
+
+.info-img
+{
+    width: calc(100% - 300px);
+    height: auto;
+    margin: 30px 150px;
+}
+
+.ph-bar
+{
+    background-image: url("../images/info-img-1.png");
+    background-size: cover;
+    background-position: center center;
+    transition: background-image 0.5s;
+}
+
+.ph-bar:hover
+{
+    background-image: url("../images/info-img-2.png");
+}

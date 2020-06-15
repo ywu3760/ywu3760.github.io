@@ -82,7 +82,7 @@
 .footer-info-text div:nth-child(2)
 {
     font-size: 2.5rem;
-    padding: 0 50px;
+    padding: 0 70px;
     margin-top: 3rem;
     line-height: 4rem;
     text-align: left;
@@ -91,7 +91,7 @@
 .footer-info-text div:nth-child(3)
 {
     font-size: 2rem;
-    padding: 0 40px;
+    padding: 0 70px;
     margin: 3rem 0;
     font-style: italic;
     text-align: center;
