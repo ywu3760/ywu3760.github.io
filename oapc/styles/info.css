@@ -6,51 +6,85 @@
     margin: 0 0;
 }
 
-.info-title
-{
-    font-family: Exo;
-    text-align: left;
-    font-size: 5rem;
-    padding-top: 30px;
-    width: 100%;
-    color: white;
-    text-align: center;
-    font-weight: bold;
-}
-
-.info-text
-{
-    font-family: Exo;
-    text-align: left;
-    font-size: 4rem;
-    padding: 30px 100px;
-    width: calc(100% - 200px);
-    color: white;
-    text-align: justify;
-    text-justify: auto;
-}
-
-.info-text span
+#info span
 {
     color: red;
 }
 
-.info-img
+.info-box
 {
-    width: calc(100% - 300px);
-    height: auto;
-    margin: 30px 150px;
+    width: calc(100% - 160px);
+    font-family: Exo;
+    padding: 50px 80px;
 }
 
-.ph-bar
+.info-box:nth-child(1)
 {
-    background-image: url("../images/info-img-1.png");
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: left;
+}
+
+.info-text-box-1
+{
+    width: 50%;
+    margin-right: 10%;
+    position: relative;
+}
+
+.info-text-box-1-title
+{
+    font-size: 4rem;
+}
+
+.info-text-box-1-text
+{
+    padding-top: 3rem;
+    font-size: 2.5rem;
+    line-height: 4rem;
+}
+
+.info-1-img
+{
+    justify-self: stretch;
+    width: 30%;
+    height: auto;
+    animation: toggleImages 7s infinite;
+    background-image: url("../images/info-img-0-2.png");
     background-size: cover;
     background-position: center center;
-    transition: background-image 0.5s;
 }
 
-.ph-bar:hover
+@keyframes toggleImages
 {
-    background-image: url("../images/info-img-2.png");
+    33% {background-image: url("../images/info-img-0-0.png");}
+    66% {background-image: url("../images/info-img-0-1.png");}
+    100% {background-image: url("../images/info-img-0-2.png");}
+}
+
+.info-text-box-1 button
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 2.5rem;
+    color: white;
+    border: 2px solid white;
+    background-color: black;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-family: Exo;
+    background: linear-gradient(to right, white 50%, black 50%);
+    background-size: 300% 100%;
+    background-position: right bottom;
+    transition: all .6s ease-out;
+}
+
+.info-text-box-1 button:hover
+{
+    background-position: left bottom;
+    color: black;
 }
