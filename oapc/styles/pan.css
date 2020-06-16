@@ -2,6 +2,7 @@
 {
     background-color: black;
     font-family: Exo;
+    font-size: inherit;
 }
 
 .pan-title
@@ -31,6 +32,7 @@
     align-items: stretch;
     justify-content: center;
     transition: all 0.75s;
+    font-size: inherit;
 }
 
 .pan-expanded-info
@@ -40,6 +42,8 @@
     background-color: white;
     transition: all 0.75s;
     padding: 10px 40px;
+    padding-bottom: 50px;
+    font-size: inherit;
 }
 
 .pan-expanded-info-title

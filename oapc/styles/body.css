@@ -7,13 +7,14 @@ html
 html, body
 {
     overflow-x: hidden;
-    width: 1536px;
+    
 }
 
 body
 {
     margin: 0;
     background-color: #114A5B;
+    width: 1536px;
 }
 
 #future
