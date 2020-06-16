@@ -1,55 +1,33 @@
-#info
-{
-    width: 100%;
-    background-color: #114A5B;
-    padding: 0 0;
-    margin: 0 0;
-}
-
-#info span
+span
 {
     color: red;
 }
 
-.info-box
+.info
 {
     width: calc(100% - 160px);
     font-family: Exo;
     padding: 50px 80px;
-}
-
-.info-box:nth-child(1)
-{
-    background-color: black;
-    color: white;
     display: flex;
     flex-direction: row;
-    align-items: stretch;
+    align-items: center;
     justify-content: left;
 }
 
-.info-text-box-1
-{
-    width: 50%;
-    margin-right: 10%;
-    position: relative;
-}
-
-.info-text-box-1-title
+.info-box-title
 {
     font-size: 4rem;
 }
 
-.info-text-box-1-text
+.info-box-text
 {
     padding-top: 3rem;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     line-height: 4rem;
 }
 
-.info-1-img
+.info-img
 {
-    justify-self: stretch;
     width: 30%;
     height: auto;
     animation: toggleImages 7s infinite;
@@ -65,26 +43,102 @@
     100% {background-image: url("../images/info-img-0-2.png");}
 }
 
-.info-text-box-1 button
+.more
 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    font-size: 2.5rem;
+    padding-bottom: 50px;
+    margin-top: -25px;
+}
+
+
+
+
+
+
+
+
+.info-1
+{
+    background-color: black;
+    color: white;
+}
+
+.info-box-1
+{
+    width: 50%;
+    margin-right: 12.5%;
+}
+
+.more-1
+{
+    padding-left: 80px;
+    padding-bottom: 50px;
+    background-color: black;
+}
+
+.more-1 button
+{
     color: white;
     border: 2px solid white;
     background-color: black;
+    background: linear-gradient(to right, white 50%, black 50%);
+    font-size: 2.5rem;
     padding: 5px 10px;
     border-radius: 20px;
     font-family: Exo;
-    background: linear-gradient(to right, white 50%, black 50%);
     background-size: 300% 100%;
     background-position: right bottom;
     transition: all .6s ease-out;
+    box-sizing: border-box;
 }
 
-.info-text-box-1 button:hover
+.more-1 button:hover
 {
     background-position: left bottom;
     color: black;
+}
+
+.info-img-2
+{
+    margin-left: 5%;
+}
+
+.info-2
+{
+    background-color: white;
+    color: black; 
+}
+
+.info-box-2
+{
+    width: 50%;
+    margin-left: 12.5%;
+}
+
+.more-2
+{
+    padding-left: calc(80px + 42.5%);
+    padding-bottom: 50px;
+    background-color: white;
+}
+
+.more-2 button
+{
+    color: black;
+    border: 2px solid black;
+    background-color: white;
+    background: linear-gradient(to right, black 50%, white 50%);
+    font-size: 2.5rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-family: Exo;
+    background-size: 300% 100%;
+    background-position: right bottom;
+    transition: all .6s ease-out;
+    box-sizing: border-box;
+}
+
+.more-2 button:hover
+{
+    background-position: left bottom;
+    color: white;
 }
