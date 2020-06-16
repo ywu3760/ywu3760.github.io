@@ -18,6 +18,7 @@ const galleyImgSrc = [
 
 function init()
 {
+    $("#header").css("height", window.innerHeight + "px");
     startCanvas();
     startGallery();
 }
@@ -95,7 +96,7 @@ function expandGalleryImg(id)
                     "opacity": "1",
                     "visibility": "visible"
                 }).html(
-                    `&#11208 Concerned About ${galleryImgTitle[parseInt(id.charAt(id.length - 1))]}? Learn More.`
+                    `&#11208 Concerned About ${galleryImgTitle[parseInt(id.charAt(id.length - 1))]}? Read More`
                 ).attr("onclick", `window.open('${galleryImgMore[parseInt(id.charAt(id.length - 1))]}', '_blank');`);
             }, 750);
         }, 750);

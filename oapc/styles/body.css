@@ -6,8 +6,6 @@ html
 
 html, body
 {
-    width: 100%;
-    height: 100%;
     overflow-x: hidden;
     width: 1536px;
 }
@@ -16,19 +14,12 @@ body
 {
     margin: 0;
     background-color: #114A5B;
-    scroll-behavior: smooth;
-}
-
-#loadingBox img
-{
-    width: 100%;
-    height: auto;   
 }
 
 #future
 {
     width: 100%;
-    height: 50%;
+    height: 287px;
     position: relative;
     background-color: black;
 }
