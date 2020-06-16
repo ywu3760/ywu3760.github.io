@@ -38,8 +38,12 @@ body
     width: 100%;
 }
 
-hr
+#update
 {
-    margin: 30px auto;
-    width: calc(100% - 300px);
+    background-color: black;
+    text-align: center;
+    font-family: Exo;
+    font-size: 1rem;
+    color: white;
+    padding: 20px 0;
 }

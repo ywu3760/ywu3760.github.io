@@ -2,8 +2,8 @@
 <html>
     <head>
         <title>Ocean Acidification Prevention Campaign</title>
-        <script src="scripts/index.js"></script>
-        <script src="scripts/canvas.js"></script>
+        <script src="scripts/gallery.min.js"></script>
+        <script src="scripts/canvas.min.js"></script>
         <script src="scripts/utilities.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="shortcut icon" href="images/logo_favicon.ico" type="image/x-icon">
@@ -13,6 +13,14 @@
         <link rel="stylesheet" href="styles/pan.css">
         <link rel="stylesheet" href="styles/footer.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo">
+        <script>
+            function init()
+            {
+                $("#header").css("height", window.innerHeight + "px");
+                startCanvas();
+                startGallery();
+            }
+        </script>
     </head>
     <body onload="init();">
         <section id="header" onresize="startCanvas();">
@@ -65,7 +73,8 @@
             <button onclick="window.open('https://www.epa.gov/ocean-acidification/understanding-science-ocean-and-coastal-acidification', '_blank');">&#11208 Concerned? Read More</button>
         </section>
         <section id="future">
-            <span>COMING SOON</span>
+            <span>COMING SOON.</span>
         </section>
+        <section id="update">Last Updated on 6/16 at 3:00 AM EST</section>
     </body>
 </html>
