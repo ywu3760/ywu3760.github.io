@@ -5,10 +5,12 @@
         <script src="scripts/index.js"></script>
         <script src="scripts/canvas.js"></script>
         <script src="scripts/utilities.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="shortcut icon" href="images/logo_favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="styles/body.css">
         <link rel="stylesheet" href="styles/header.css">
         <link rel="stylesheet" href="styles/info.css">
+        <link rel="stylesheet" href="styles/pan.css">
         <link rel="stylesheet" href="styles/footer.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo">
     </head>
@@ -41,15 +43,29 @@
                     The Chemistry Behind This
                 </div>
                 <div class="info-box-text">
-                    Our oceans are natural <span>carbon dioxide</span> sinks: they are constantly absorbing <span>carbon dioxide</span> from our atmosphere. However, when the gas enters the oceans, it would react with the water to form <span>carbonic acid</span>, which acidifies our oceans. The increase in acidity is typically neglegible, but the amount of carbon dioxide being absorbed by our oceans is <span>increasing</span> every year. As a result, the average pH of our oceans has dropped by about <span>0.1</span> since the pre-industrial times, which is approximately a <span>25% increase in acidity</span>.
+                    Our oceans are natural <span>carbon dioxide</span> sinks: they are constantly absorbing <span>carbon dioxide</span> from our atmosphere. However, when the gas enters our oceans, it would react with the water to form <span>carbonic acid</span>, which acidifies our oceans. The increase in acidity is typically neglegible, but the amount of carbon dioxide being absorbed by our oceans is <span>increasing</span> every year. As a result, the average pH of our oceans has dropped by about <span>0.1</span> since the pre-industrial times, which is approximately a <span>25% increase in acidity</span>.
                 </div>
             </div>
         </section>
         <section class="more more-2">
             <button onclick="window.open('https://www.epa.gov/ocean-acidification/understanding-science-ocean-and-coastal-acidification', '_blank');">&#11208 Interested? Read More</button>
         </section>
+        <section class="pan">
+            <div class="pan-title">
+                Who is Hurting From This?
+            </div>
+            <div id="pan-description">Click on any image in the gallery to learn more.</div>
+            <div id="pan-gallery">
+                <div id="pan-gallery-img-0"></div>
+                <div id="pan-gallery-img-1"></div>
+                <div id="pan-gallery-img-2"></div>
+            </div>
+        </section>
+        <section class="more more-3">
+            <button onclick="window.open('https://www.epa.gov/ocean-acidification/understanding-science-ocean-and-coastal-acidification', '_blank');">&#11208 Concerned? Read More</button>
+        </section>
         <section id="future">
-            <span>COMING SOON...</span>
+            <span>COMING SOON</span>
         </section>
     </body>
 </html>

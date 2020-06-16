@@ -142,3 +142,40 @@ span
     background-position: left bottom;
     color: white;
 }
+
+
+
+
+
+
+.more-3
+{
+    padding-right: 80px;
+    padding-bottom: 50px;
+    background-color: black;
+    text-align: right;
+}
+
+.more-3 button
+{
+    visibility: hidden;
+    opacity: 0;
+    color: white;
+    border: 2px solid white;
+    background-color: black;
+    background: linear-gradient(to right, white 50%, black 50%);
+    font-size: 2.5rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-family: Exo;
+    background-size: 300% 100%;
+    background-position: right bottom;
+    transition: all .6s ease-out;
+    box-sizing: border-box;
+}
+
+.more-3 button:hover
+{
+    background-position: left bottom;
+    color: black;
+}

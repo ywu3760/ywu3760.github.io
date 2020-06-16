@@ -1,0 +1,55 @@
+.pan
+{
+    background-color: black;
+    font-family: Exo;
+}
+
+.pan-title
+{
+    width: 100%;
+    font-size: 4rem;
+    color: white;
+    padding-top: 50px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+#pan-description
+{
+    padding-bottom: 30px;
+    text-align: center;
+    width: 100%;
+    font-size: 2.2rem;
+    color: white;
+    transition: all 0.75s;
+}
+
+#pan-gallery
+{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    transition: all 0.75s;
+}
+
+.pan-expanded-info
+{
+    width: 0px;
+    opacity: 0;
+    background-color: white;
+    transition: all 0.75s;
+    padding: 10px 40px;
+}
+
+.pan-expanded-info-title
+{
+    font-size: 4rem;
+}
+
+.pan-expanded-info-text
+{
+    padding-top: 2rem;
+    font-size: 2.2rem;
+    line-height: 4rem;
+}
