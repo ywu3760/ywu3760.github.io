@@ -1,108 +1,101 @@
-#footer
+.footer-image
 {
-    width: 100%;
-    background-color: #114A5B;
-    padding: 0 0;
-    margin: 0 0;
-}
-
-.footer-image-container
-{
+    background-color: black;
     position: relative;
-    width: 100%;
-    background-image: url("../images/background-footer.png");
-    background-size: cover;
 }
 
-.footer-image-container img
+.footer-image img
 {
+    background-color: #0b2f3a;
     width: 100%;
     height: auto;
-    background-color: #114A5B;
-    margin: 0 0;
+    font-family: Exo;
+    color: white;
+    transform: translateY(-2px);
 }
 
-.footer-image-message-box
+.footer-image-box
 {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 4.2rem;
-    font-weight: bold;
-    text-align: center;
-    color: white;
     width: 100%;
 }
 
-.footer-image-message-box div:nth-child(2)
+.footer-image-box div
 {
-    padding-top: 15rem;
+    width: 100%;
+    text-align: center;
+    font-size: 5rem;
+    color: white;
+    padding: 10rem 0px;
+    font-weight: bold;
 }
 
-.footer-image-message-box span
-{
-    color: red;
-}
-
-.footer-info-container
+#footer
 {
     background-color: black;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.footer-info-container img
+#footer img
 {
     width: 20%;
     height: auto;
-    margin-bottom: 6rem;
 }
 
-.footer-info-text
+.footer-title
 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-size: 5rem;
     color: white;
+    font-family: Exo;
+    padding-top: 5rem;
 }
 
-.footer-info-text div:nth-child(1)
+.footer-descrip
 {
-    font-size: 4.2rem;
+    font-size: 3rem;
+    color: white;
+    font-family: Exo;
+    padding-bottom: 5rem;
     text-align: center;
-    width: 100%;
-    font-weight: bold;
+    font-style: italic;
 }
 
-.footer-info-text div:nth-child(2)
+.footer-feedback button
 {
-    margin-top: 3rem;
-    text-align: left;
-    font-size: 2.2rem;
-    line-height: 4rem;
-    padding: 0px 100px;
-    font-weight: normal;
+    color: white;
+    border: 2px solid white;
+    background-color: #249abe;
+    background: linear-gradient(black 50%, #249abe 50%);
+    font-size: 3rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-family: Exo;
+    background-size: 100% 300%;
+    background-position: top center;
+    transition: all .6s ease-out;
+    box-sizing: border-box;
 }
 
-.footer-info-text div:nth-child(3)
+.footer-feedback button:hover
+{
+    background-position: bottom center;
+    color: black;
+}
+
+
+
+.footer-credits
 {
     font-size: 2rem;
-    padding: 0 70px;
-    margin: 3rem 0;
-    font-style: italic;
-    text-align: center;
-}
-
-#footer:last-child
-{
-    font-size: 1rem;
-    text-align: center;
-    background-color: black;
     color: white;
-    padding-bottom: 1.5rem;
+    font-family: Exo;
+    padding-top: 5rem;
+    text-align: center;
+    font-style: italic; 
 }

@@ -1,0 +1,22 @@
+#solutions
+{
+    font-family: Exo;
+    color: white;
+    transition: all 0.75s;
+    background: linear-gradient(black, #0b2f3a);
+}
+
+.solutions-title
+{
+    text-align: center;
+    font-size: 7rem;
+    padding-top: 25rem;
+    padding-bottom: 5rem;
+}
+
+#solutions-descrip
+{
+    text-align: center;
+    font-size: 4rem;
+    padding-bottom: 20rem;
+}

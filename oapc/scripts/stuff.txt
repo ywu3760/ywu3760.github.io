@@ -23,11 +23,3 @@
     </div>
     <div>Website last updated on 6/15/2020.</div>
 </section>
-
-<section class="learn-more-box-1">
-    <button onclick="window.open('https://oceanservice.noaa.gov/facts/acidification.html', '_blank');">&#11208 Curious? Read More</button>
-</section>
-
-<section class="learn-more-box-2">
-    <button onclick="window.open('https://www.epa.gov/ocean-acidification/understanding-science-ocean-and-coastal-acidification', '_blank');">&#11208 Interested? Read More</button>
-</section>
