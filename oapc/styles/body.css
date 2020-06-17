@@ -62,3 +62,15 @@ body
 {
     opacity: 0;
 }
+
+@font-face {
+    font-family: 'open-arrow';
+    src: url('../fonts/OpenArrow-Regular.eot') format('embedded-opentype'),
+        url('../fonts/OpenArrow-Regular.woff2') format('woff2'),
+        url('../fonts/OpenArrow-Regular.woff') format('woff'),
+        url('../fonts/OpenArrow-Regular.otf') format('opentype'),
+        url('../fonts/OpenArrow-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    unicode-range: U+2190-21ff;
+}
