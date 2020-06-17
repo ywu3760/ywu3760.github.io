@@ -17,41 +17,11 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo">
         <script>
             function init() {
-                elements = document.querySelectorAll('.hidden');
-                WWHH = window.innerHeight;
-
-                $("#header").css("height", window.innerHeight + "px");
+                $("#header").css("height", "754px");
                 startCanvas();
                 startGallery();
                 startSolutions();
             }
-
-            (function() {
-                var elements, windowHeight;
-                function checkPosition() {
-                    for (var i = 0; i < elements.length; i++) {
-                    var element = elements[i];
-                    var positionFromTop = elements[i].getBoundingClientRect().top;
-
-                    if (positionFromTop - windowHeight <= 0) {
-                        element.classList.add('fade-in-element');
-                        element.classList.remove('hidden');
-                    }
-                    }
-                }
-
-                function initEffect()
-                {
-                    elements = document.querySelectorAll('.hidden');
-                    windowHeight = window.innerHeight;
-                }
-
-                window.addEventListener('scroll', checkPosition);
-                window.addEventListener('resize', initEffect);
-
-                initEffect();
-                checkPosition();
-            })();
         </script>
         <meta name="viewport" content="width=1536">
     </head>
@@ -119,10 +89,10 @@
         <section id="footer">
             <img src="images/logo.png" alt="OAPC Logo">
             <div class="footer-title">An Ocean Acidification Prevention Campaign</div>
-            <div class="footer-descrip">- brought to you by a high-schooler concerned about the earth -</div>
+            <div class="footer-descrip">brought to you by a high-schooler concerned about the earth</div>
             <div class="footer-feedback"><button onclick="window.open('https://ywu3760.typeform.com/to/ket8aQ64', '_blank');">Click Here to Give Me Feedback!</button></div>
             <div class="footer-credits">Credits to my sister May for drawing the footer.<br />Credits to my friends for quality assurance.</div>
         </section>
-        <section id="update">Last Updated on 6/17 at 2:10 AM EST</section>
+        <section id="update">Last Updated on 6/17 at 2:25 AM EST | Next Goal: Adding @media CSS for RWD</section>
     </body>
 </html>
