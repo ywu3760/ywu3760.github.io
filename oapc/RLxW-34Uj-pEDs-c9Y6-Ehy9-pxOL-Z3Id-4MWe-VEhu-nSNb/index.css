@@ -1,0 +1,68 @@
+html
+{
+    font-size: 62.5%;
+    font-family: Exo;
+}
+
+html, body
+{
+    overflow-x: hidden;
+}
+
+body
+{
+    width: 100%;
+    margin: 0;
+    position: relative;
+    background-image: url("../images/meta-image.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-attachment: fixed;
+}
+
+section
+{
+    margin: 50px 10%;
+    background-color: rgba(195,225,235,0.8);
+    color: black;
+    padding: 10px 10px;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+
+.section-title
+{
+    font-size: 2.75rem;
+    font-weight: bold;
+}
+
+.section-answer
+{
+    font-size: 2.25rem;
+    margin-top: 5px;
+    line-height: 4rem;
+}
+
+section:hover
+{
+    background-color: rgba(195,225,235,1);
+}
+
+.update
+{
+    background-color: black;
+    text-align: center;
+    font-family: Exo;
+    font-size: 1rem;
+    color: white;
+    width: 100%;
+    border-radius: 0px;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.update:hover
+{
+    background-color: black;
+}
