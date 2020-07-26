@@ -209,7 +209,7 @@ function nextState() {
                 <p>Since your birthday is on the <span id="resultDay"></span> of <span id="resultMonth"></span>, you fall in the Zodiac range of <span id="resultRange"></span>. Therefore, you are <span id="resultZodiac"></span>! <span id="resultEmoji"></span></p>
             </div>
             <div class="result-qualities">
-                <p>Since you are a <span id="resultZodiac2"></span> <span id="resultEmoji2"></span>, my present to you will be reminding you of all the <span>good</span> qualities that makes who you are today!</p>
+                <p>Since you are <span id="resultZodiac2"></span> <span id="resultEmoji2"></span>, my present to you will be reminding you of all the <span>good</span> qualities that makes who you are today!</p>
                 <p>You are <span id="resultStrength"></span>!</p>
                 <p>Your favorite activities:<br><span id="resultActivity"></span></p>
             </div>
