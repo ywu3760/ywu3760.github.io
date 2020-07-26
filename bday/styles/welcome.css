@@ -28,7 +28,7 @@ body {
 .welcome-text {
     font-family: monospace;
     color: black;
-    font-size: 30px;
+    font-size: 50px;
     text-align: center;
     opacity: 1;
     animation: welcomeBoxOpacity 1.5s 1;
@@ -41,7 +41,7 @@ body {
 
 #welcomeInput, #welcomeInput2 {
     font-family: monospace;
-    font-size: 30px;
+    font-size: 50px;
     color: black;
     background-color: inherit;
     border: none;
@@ -67,7 +67,7 @@ body {
 .welcome-button {
     margin-top: 30px;
     font-family: monospace;
-    font-size: 20px;
+    font-size: 35px;
     background-color: black;
     color: #ebebeb;
     text-align: center;
