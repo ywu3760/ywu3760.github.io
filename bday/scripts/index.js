@@ -144,7 +144,7 @@ function nextState() {
                             "method": "GET",
                             "headers": {
                                 "x-rapidapi-host": "zodiac-sign.p.rapidapi.com",
-                                "x-rapidapi-key": "049dfcba0amsh48bf6c8001562aep1e4236jsn20b144a6fe05"
+                                "x-rapidapi-key": "key"
                             }
                         };
                         $.ajax(settings).done(function (response) {
