@@ -9,3 +9,6 @@
 
 # /oapc
 *A website built to raise awareness and promote action against Ocean Acidification*
+
+# /gallery
+*An off-the-internet attempt to create a super costumizable horizontal image gallery out of pure javascript*
